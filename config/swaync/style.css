@@ -1,0 +1,119 @@
+* {
+    font-family: "Fira Sans", "Noto Sans", sans-serif;
+}
+
+.notification-center {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notification {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 1em;
+    margin: 0.5em 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.notification.critical {
+    background-color: rgba(80, 20, 20, 0.9);
+    border: 1px solid rgba(255, 100, 100, 0.2);
+}
+
+.notification.low {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.notification .summary {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.notification .body {
+    color: #dddddd;
+}
+
+.notification .time {
+    color: #aaaaaa;
+}
+
+.notification .icon {
+    margin-right: 1em;
+}
+
+.control-center {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-title {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.widget-dnd {
+    margin-bottom: 1em;
+}
+
+.widget-dnd label {
+    color: #ffffff;
+}
+
+.widget-label {
+    margin-bottom: 0.5em;
+    color: #ffffff;
+}
+
+.widget-mpris {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 0.5em;
+}
+
+.widget-mpris .title {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.widget-mpris .artist {
+    color: #dddddd;
+}
+
+.widget-buttons {
+    margin-top: 1em;
+}
+
+.widget-buttons button {
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    margin-right: 0.5em;
+}
+
+.widget-buttons button:hover {
+    background-color: rgba(60, 60, 60, 0.9);
+}
+
+.empty {
+    color: #aaaaaa;
+}
+
+.close-button {
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+}
+
+.close-button:hover {
+    background-color: rgba(60, 60, 60, 0.9);
+}

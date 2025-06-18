@@ -1,0 +1,130 @@
+* {
+    font-family: 'Aporetic Sans', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 16px;
+}
+
+window#waybar {
+    all:unset;
+    background: alpha(black ,.6);
+}
+
+.modules-left {
+    padding:7px;
+}
+.modules-center {
+    padding:7px;
+}
+.modules-right {
+    padding: 7px;
+}
+
+tooltip {
+    background: black;
+    color: white;
+}
+
+#clock:hover, #bluetooth:hover,#network:hover,#battery:hover {
+    transition: all .3s ease;
+    color: white;
+}
+
+#clock{
+    padding: 0px 5px;
+    color: white;
+    transition: all .3s ease;
+}
+#workspaces {
+    padding: 0px 5px;
+}
+#workspaces button {
+    all:unset;
+    padding: 0px 5px;
+    color: white;
+    transition: all .2s ease;
+}
+#workspaces button:hover {
+    color:rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px white;
+    transition: all 1s ease;
+}
+#workspaces button.active {
+    color: white;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty:hover {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.empty.active {
+    color: grey;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#bluetooth{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color: white;
+
+}
+#network{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:white;
+}
+
+#power-profiles-daemon {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:white;
+}
+
+#battery{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:white;
+}
+
+#pulseaudio {
+    padding: 0px 5px;
+    color:white;
+}
+
+#battery.charging {
+    color: #26A65B;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffbe61;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#tray{
+    padding: 0px 5px;
+    transition: all .3s ease;
+
+}
+#tray menu * {
+    padding: 0px 5px;
+    transition: all .3s ease;
+}
+
+#tray menu separator {
+    padding: 0px 5px;
+    transition: all .3s ease;
+}
