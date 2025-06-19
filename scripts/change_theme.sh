@@ -23,19 +23,19 @@ if [ "$STYLE" = "$CURRENT_STYLE" ]; then
 fi
 
 if [ "$STYLE" = "dark" ]; then
-  GHOSTTY_INVERSE="LightOwl"
+  GHOSTTY_INVERSE="AtomOneLight"
   GHOSTTY_STYLE="DoomOne"
   INVERSE="light"
   COLOR_SCHEME="prefer-dark"
 elif [ "$STYLE" = "light" ]; then
   GHOSTTY_INVERSE="DoomOne"
-  GHOSTTY_STYLE="LightOwl"
+  GHOSTTY_STYLE="AtomOneLight"
   INVERSE="dark"
   COLOR_SCHEME="prefer-light"
 fi
 
 # start transition
-niri msg action do-screen-transition -d 1400
+niri msg action do-screen-transition -d 1500
 
 # set bar
 sed -i "1 s/$INVERSE/$STYLE/g" ~/.config/waybar/style.css

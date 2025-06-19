@@ -7,7 +7,7 @@
 .notification-center {
     background-color: alpha(@background, 0.6);
     border-radius: 12px;
-    padding: 1em;
+    padding: 10em;
     border: 1px solid alpha(@foreground, 0.1);
 }
 

@@ -74,7 +74,9 @@ tooltip {
     padding: 0px 5px;
     transition: all .3s ease;
     color: @foreground;
-
+}
+#language {
+    color: @foreground;
 }
 #network{
     padding: 0px 5px;
