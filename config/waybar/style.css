@@ -1,3 +1,5 @@
+@import url('/home/nto/Code/Dots/themes/light.css');
+
 * {
     font-family: 'Aporetic Sans', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 16px;
@@ -5,7 +7,7 @@
 
 window#waybar {
     all:unset;
-    background: alpha(black ,.6);
+    background: alpha(@background ,.6);
 }
 
 .modules-left {
@@ -19,18 +21,18 @@ window#waybar {
 }
 
 tooltip {
-    background: black;
-    color: white;
+    background: alpha(@background, .6);
+    color: @foreground;
 }
 
 #clock:hover, #bluetooth:hover,#network:hover,#battery:hover {
     transition: all .3s ease;
-    color: white;
+    color: @foreground;
 }
 
 #clock{
     padding: 0px 5px;
-    color: white;
+    color: @foreground;
     transition: all .3s ease;
 }
 #workspaces {
@@ -39,74 +41,74 @@ tooltip {
 #workspaces button {
     all:unset;
     padding: 0px 5px;
-    color: white;
+    color: @foreground;
     transition: all .2s ease;
 }
 #workspaces button:hover {
-    color:rgba(0,0,0,0);
+    color:alpha(@background, .6);
     border: none;
-    text-shadow: 0px 0px 1.5px white;
+    text-shadow: 0px 0px 1.5px @foreground;
     transition: all 1s ease;
 }
 #workspaces button.active {
-    color: white;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+    color: @foreground;
+    text-shadow: 0px 0px 2px alpha(@background, .5);
 }
 #workspaces button.empty {
-    color: rgba(0,0,0,0);
+    color: alpha(@foreground-light, .2);
     border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+    text-shadow: 0px 0px 1.5px alpha(@background, .2);
 }
 #workspaces button.empty:hover {
-    color: rgba(0,0,0,0);
+    color: alpha(@background, .2);
     border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    text-shadow: 0px 0px 1.5px alpha(@background, .2);
     transition: all 1s ease;
 }
 #workspaces button.empty.active {
-    color: grey;
+    color: @foreground-alt;
     border: none;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+    text-shadow: 0px 0px 1.5px alpha(@background, .5);
 }
 #bluetooth{
     padding: 0px 5px;
     transition: all .3s ease;
-    color: white;
+    color: @foreground;
 
 }
 #network{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:white;
+    color: @foreground;
 }
 
 #power-profiles-daemon {
     padding: 0px 5px;
     transition: all .3s ease;
-    color:white;
+    color: @foreground;
 }
 
 #battery{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:white;
+    color: @foreground;
 }
 
 #pulseaudio {
     padding: 0px 5px;
-    color:white;
+    color: @foreground;
 }
 
 #battery.charging {
-    color: #26A65B;
+    color: @green;
 }
 
 #battery.warning:not(.charging) {
-    color: #ffbe61;
+    color: @yellow;
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
+    color: @red;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;

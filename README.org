@@ -5,7 +5,7 @@
 |--------------------+--------------------------+---------------------------------|
 | niri               | wayland compositor       | [[https://github.com/YaLTeR/niri/wiki/Getting-Started][niri wiki]]                       |
 | ghostty            | terminal emulator        | Compile from source ([[https://ghostty.org/][repo]])      |
-| fuzzel             | application launcher     | ~dnf install fuzzel~            |
+| fuzzel             | application launcher     | ~dnf install fuzzel~              |
 | waybar             | system bar               | ~dnf install waybar~              |
 | swaync             | notification center      | ~dnf install swaync~              |
 | swaybg             | set background wallpaper | ~dnf install swaybg~              |
@@ -14,7 +14,13 @@
 | xwayland-satellite | xwayland for niri        | ~dnf install xwayland-satellite~  |
 | nvim               | inferior backup editor   | ~dnf install neovim~              |
 |--------------------+--------------------------+---------------------------------|
-| gnome              | as backup de             | should use fedora gnome edition |
+| gnome              | as backup DE             | should use fedora gnome edition |
 | emacs              | emacs                    | separate repo                   |
+| janet              | scripting language       | See  [[https://janet-lang.org/][janet]]                      |
+
+* Install dots
+#+begin_src bash
+stow -v -t ~/.config config --adopt
+#+end_src
 
 * Wallpapers

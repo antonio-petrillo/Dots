@@ -32,6 +32,7 @@
     "clock": {
         "interval": 15,
         "format": "{:%I:%M %p %a %d %Y}",
+        "tooltip": false,
         "tooltip-format": "<tt>{calendar}</tt>"
     },
     "battery": {
@@ -70,7 +71,7 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "ghostty nmtui"
+        "on-click": "ghostty -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -84,4 +85,8 @@
         },
         "on-click": "pavucontrol"
     },
+    "niri/language": {
+        "format": " {short} {variant}",
+        "tooltip": false
+    }
 }
