@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-
+# Work in progress
 if [ $# -eq 0 ]; then
     echo "usage: change_wallpaper.sh <path to image>"
     exit 1
