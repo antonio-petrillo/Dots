@@ -114,7 +114,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "swaybg" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
-// spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
+spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg" "before-sleep" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
 
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "emacs" "--daemon"
@@ -213,6 +213,7 @@ binds {
     Mod+U { focus-workspace-up; }
     Mod+I { focus-workspace-down; }
 
+    Mod+Z { spawn "~/Code/Dots/scripts/zen_mode.sh"; }
     Mod+Shift+S { spawn "env" "XDG_CURRENT_DESKTOP=gnome" "gnome-control-center"; }
 
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }

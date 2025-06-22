@@ -4,8 +4,8 @@
     "height": 32, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
     "modules-left": [
+        "custom/power",
         "niri/workspaces"//,
-        // "wlr/taskbar"
     ],
     "modules-center": [
         "clock",
@@ -18,6 +18,7 @@
         }
     },
     "modules-right": [
+        "idle_inhibitor",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
@@ -25,6 +26,20 @@
         "battery",
         "tray",
     ],
+    "idle_inhibitor": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "",
+        }
+    },
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout"
+
+    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10

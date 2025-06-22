@@ -25,12 +25,18 @@ tooltip {
     color: @foreground;
 }
 
-#clock:hover, #bluetooth:hover,#network:hover,#battery:hover {
+
+#idle_inhibitor:hover, #power:hover, #clock:hover, #bluetooth:hover,#network:hover,#battery:hover {
     transition: all .3s ease;
     color: @foreground;
 }
 
-#clock{
+#custom-power{
+    padding: 0px 5px;
+    color: @foreground;
+    transition: all .3s ease;
+}
+#idle_inhibitor, #clock{
     padding: 0px 5px;
     color: @foreground;
     transition: all .3s ease;
