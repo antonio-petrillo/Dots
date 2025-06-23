@@ -48,7 +48,8 @@
         "interval": 15,
         "format": "{:%I:%M %p %a %d %Y}",
         "tooltip": false,
-        "tooltip-format": "<tt>{calendar}</tt>"
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "on-click": "swaync-client -t -sw"
     },
     "battery": {
         "states": {

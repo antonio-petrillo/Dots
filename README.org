@@ -12,11 +12,10 @@
 | swaylock           | screen locker            | ~dnf install swaylock~            |
 | swayidle           | idle timer for locker    | ~dnf install swayidle~            |
 | xwayland-satellite | xwayland for niri        | ~dnf install xwayland-satellite~  |
-| nvim               | inferior backup editor   | ~dnf install neovim~              |
+| firefox            | browser                  | already installed               |
 |--------------------+--------------------------+---------------------------------|
 | gnome              | as backup DE             | should use fedora gnome edition |
 | emacs              | emacs                    | separate repo                   |
-| janet              | scripting language       | See  [[https://janet-lang.org/][janet]]                      |
 
 * Install dots
 #+begin_src bash

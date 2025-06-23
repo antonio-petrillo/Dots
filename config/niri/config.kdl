@@ -21,7 +21,7 @@ input {
         accel-speed 0.2
     }
 
-    focus-follows-mouse max-scroll-amount="15%"
+    // focus-follows-mouse max-scroll-amount="15%"
 }
 
 layer-rule {
@@ -210,11 +210,11 @@ binds {
     Mod+Shift+O { move-window-to-monitor-next; }
     Mod+O { focus-monitor-next; }
 
-    Mod+U { focus-workspace-up; }
-    Mod+I { focus-workspace-down; }
+    Mod+P { focus-workspace-up; }
+    Mod+N { focus-workspace-down; }
 
     Mod+Z { spawn "~/Code/Dots/scripts/zen_mode.sh"; }
-    Mod+Shift+S { spawn "env" "XDG_CURRENT_DESKTOP=gnome" "gnome-control-center"; }
+    Mod+S { spawn "env" "XDG_CURRENT_DESKTOP=gnome" "gnome-control-center"; }
 
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
@@ -298,8 +298,8 @@ binds {
 
     Mod+Shift+Escape { quit; }
 
-    Mod+P { power-off-monitors; }
-    Mod+Shift+P { spawn "wlogout"; }
+    Mod+Shift+P { power-off-monitors; }
+    Mod+Ctrl+P { spawn "wlogout"; }
 }
 
 switch-events {
