@@ -50,10 +50,11 @@ layout {
     preset-window-heights {
         proportion 0.5
         proportion 0.75
+        proportion 1.0
     }
 
     default-column-width {
-        proportion 0.5
+        proportion 1.0
     }
 
     focus-ring {
@@ -114,7 +115,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "swaybg" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
-spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg" "before-sleep" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
+spawn-at-startup "swayidle" "-w" "timeout" "301" "niri msg action power-off-monitors" "timeout" "450" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg" "before-sleep" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
 
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "emacs" "--daemon"
@@ -154,6 +155,7 @@ window-rule {
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"bitwarden"#
 
     block-out-from "screen-capture"
 
@@ -176,7 +178,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Shift+n repeat=false hotkey-overlay-title="Open a Notifications" { spawn "swaync-client" "-t" "-sw"; }
-    Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "~/.local/bin/ghostty"; }
+    // Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "~/.local/bin/ghostty"; }
+    Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+Shift+Return repeat=false hotkey-overlay-title="Open a File Manager" { spawn "nautilus"; }
     Mod+D hotkey-overlay-title="Run an Application" { spawn "fuzzel"; }
     Mod+E hotkey-overlay-title="Open Editor" repeat=false { spawn "emacsclient" "-c"; }
@@ -216,8 +219,8 @@ binds {
     Mod+Z { spawn "~/Code/Dots/scripts/zen_mode.sh"; }
     Mod+S { spawn "env" "XDG_CURRENT_DESKTOP=gnome" "gnome-control-center"; }
 
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Shift+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+Shift+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
     Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
@@ -226,8 +229,8 @@ binds {
     Mod+Ctrl+WheelScrollRight { move-column-right; }
     Mod+Ctrl+WheelScrollLeft  { move-column-left; }
 
-    Mod+Shift+WheelScrollDown      { focus-column-right; }
-    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+WheelScrollDown      { focus-column-right; }
+    Mod+WheelScrollUp        { focus-column-left; }
     Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
     Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 
