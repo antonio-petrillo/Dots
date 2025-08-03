@@ -118,7 +118,7 @@ spawn-at-startup "swaybg" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LV
 spawn-at-startup "swayidle" "-w" "timeout" "301" "niri msg action power-off-monitors" "timeout" "450" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg" "before-sleep" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "emacs" "--daemon"
+spawn-at-startup "emacs" "--daemon=termacs" "--init-directory=~/Code/Dots/terminal-emacs/"
 
 prefer-no-csd
 
@@ -182,7 +182,8 @@ binds {
     Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+Shift+Return repeat=false hotkey-overlay-title="Open a File Manager" { spawn "nautilus"; }
     Mod+D hotkey-overlay-title="Run an Application" { spawn "fuzzel"; }
-    Mod+E hotkey-overlay-title="Open Editor" repeat=false { spawn "emacsclient" "-c"; }
+    Mod+E hotkey-overlay-title="Open Editor" repeat=false { spawn "emacs"; }
+    Mod+Shift+E hotkey-overlay-title="Open Editor (minimal)" repeat=false { spawn "emacsclient" "-c" "-s" "termacs"; }
 
     Mod+T repeat=false hotkey-overlay-title="Toggle theme" { spawn "~/Code/Dots/scripts/change_theme.sh"; }
 
@@ -195,7 +196,7 @@ binds {
     XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "5%+"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "5%-"; }
 
-    Mod+Shift+E repeat=false { toggle-overview; }
+    Mod+Ctrl+E repeat=false { toggle-overview; }
 
     Mod+Shift+Q { close-window; }
 

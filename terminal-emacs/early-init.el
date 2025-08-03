@@ -1,36 +1,37 @@
 ;;; early-init.el --- Description -*- lexical-binding: t; -*-
 
-(defvar nto--cache (file-name-concat (getenv "HOME") ".local/minimal-emacs"))
+;; cache directory setup
+(defvar nto--cache (file-name-concat (getenv "HOME") ".local/vanillaemacs"))
 
 (unless (file-exists-p nto--cache)
   (make-directory nto--cache t))
 
-(startup-redirect-eln-cache (expand-file-name "eln" nto--cache))
-(setq package-user-dir (expand-file-name "elpa" nto--cache))
+;; don't pollute `user-emacs-directory'
+(setq custom-file (file-name-concat nto--cache "custom.el")
+      auto-save-list-file-prefix (file-name-concat nto--cache "auto-save-list/.saves-")
+      package-user-dir (file-name-concat nto--cache "elpa")
+      project-list-file (file-name-concat nto--cache "projects")
+      bookmark-default-file (file-name-concat nto--cache "bookmarks")
+      recentf-save-file (file-name-concat nto--cache "recentf")
+      eshell-directory-name (file-name-concat nto--cache "eshell")
+      treesit-extra-load-path (file-name-concat nto--cache "tree-sitter"))
 
-(setq no-littering-etc-directory (expand-file-name "etc" nto--cache))
-(setq no-littering-var-directory (expand-file-name "var" nto--cache))
+(startup-redirect-eln-cache (file-name-concat nto--cache "eln-cache"))
 
-(setq custom-file (file-name-concat nto--cache "custom.el"))
 (load custom-file :no-error-if-file-is-missing)
 
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
-(setq tramp-auto-save-directory (expand-file-name "tramp-autosave" nto--cache))
+(setq make-backup-files nil
+      create-lockfiles nil
+      inhibit-splash-screen t
+      inhibit-startup-screen t
+      ring-bell-function 'ignore
+      use-short-answers 5
+      inhibit-x-resources t
+      inhibit-startup-buffer-menu t
+      default-input-method "italian-postfix"
+      package-enable-at-startup nil)
 
-(setq org-persist-directory (expand-file-name "org/persist/" nto--cache)
-      org-publish-timestamp-directory (expand-file-name "org/timestamps/" nto--cache)
-      org-preview-latex-image-directory (expand-file-name "org/latex/" nto--cache)
-      org-list-allow-alphabetical t)
-
-(setq package-enable-at-startup nil)
-(setq evil-want-keybinding nil)
-(setq use-short-answers t)
-(setq ring-bell-function 'ignore)
-
-(setq inhibit-splash-screen t)
 (setq-default truncate-lines t)
-(setq inhibit-startup-screen t)
 
 (add-to-list 'default-frame-alist
              '(menu-bar-lines . 0))
@@ -39,14 +40,9 @@
 (add-to-list 'default-frame-alist
              '(vertical-scroll-bars . nil))
 
-(setq menu-bar-mode nil
-      tool-bar-mode nil
-      scroll-bar-mode nil)
-
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-
 (setq gc-cons-threshold most-positive-fixnum
-      gc-cons-percentage 0.5)
+      gc-cons-percentage 0.6)
+
 
 (defvar nto/file-name-handler-alist file-name-handler-alist)
 (defvar nto/vc-handled-backends vc-handled-backends)
