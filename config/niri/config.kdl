@@ -113,7 +113,6 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "swaync"
 spawn-at-startup "swaybg" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
 spawn-at-startup "swayidle" "-w" "timeout" "301" "niri msg action power-off-monitors" "timeout" "450" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg" "before-sleep" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
 
@@ -177,7 +176,6 @@ hotkey-overlay {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Shift+n repeat=false hotkey-overlay-title="Open a Notifications" { spawn "swaync-client" "-t" "-sw"; }
     // Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "~/.local/bin/ghostty"; }
     Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+Shift+Return repeat=false hotkey-overlay-title="Open a File Manager" { spawn "nautilus"; }
