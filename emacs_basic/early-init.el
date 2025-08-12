@@ -16,6 +16,9 @@
       eshell-directory-name (file-name-concat nto--cache "eshell")
       treesit-extra-load-path (file-name-concat nto--cache "tree-sitter"))
 
+;; setup other directories 
+(setq org-directory (file-name-concat (getenv "HOME") "Documents" "Org"))
+
 (startup-redirect-eln-cache (file-name-concat nto--cache "eln-cache"))
 
 (load custom-file :no-error-if-file-is-missing)

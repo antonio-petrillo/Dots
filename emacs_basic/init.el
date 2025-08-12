@@ -92,9 +92,6 @@ The DWIM behaviour of this command is as follows:
    (t
     (keyboard-quit))))
 
-(when (display-graphic-p)
-  (load-theme 'modus-operandi))
-
 (use-package emacs
   :ensure nil
   :after evil
@@ -113,17 +110,18 @@ The DWIM behaviour of this command is as follows:
   (setq-default indent-tabs-mode nil
 		tab-width 4)
 
-  (setq completions-highlight-face 'completion-highlight)
+  (setq completions-highlight-face nil)
 
   (define-key global-map [remap backward-kill-word] #'nto--backward-kill-word)
   (define-key global-map [remap keyboard-quit] #'nto--keyboard-quit-dwim)
 
-  (global-hl-line-mode)
   (add-hook 'prog-mode-hook (lambda ()
                               (display-line-numbers-mode 1)
                               (hs-minor-mode)
                               (setq-local display-line-numbers 'relative)))
 
+  (load-theme 'modus-vivendi)
+  (recentf-mode)
   :bind
   ("<leader> tt" . #'toggle-truncate-lines)
   ("<leader> ie" . #'emoji-list)
@@ -430,10 +428,7 @@ The DWIM behaviour of this command is as follows:
   :bind ("C-c p" . cape-prefix-map)
   :init
   (add-hook 'completion-at-point-functions #'cape-file)
-  (add-hook 'completion-at-point-functions #'cape-dict)
-  (add-hook 'completion-at-point-functions #'cape-elisp-block)
-  (add-hook 'completion-at-point-functions #'cape-elisp-symbol)
-  (add-hook 'completion-at-point-functions #'cape-keyword))
+  (add-hook 'completion-at-point-functions #'cape-dict))
 
 (use-package nerd-icons)
 
@@ -635,6 +630,64 @@ The DWIM behaviour of this command is as follows:
                               (?\( . ?\))
                               (?\" . ?\"))))
 
+(use-package tempel
+  :bind
+  (("M-=" . #'tempel-insert))
+  :custom
+  (tempel-trigger-prefix "<")
+  :init
+  (defun tempel-setup-capf ()
+    (setq-local completion-at-point-functions
+                (cons #'tempel-complete completion-at-point-functions)))
+
+  (add-hook 'prog-mode-hook 'tempel-setup-capf)
+  (add-hook 'conf-mode-hook 'tempel-setup-capf)
+  (add-hook 'text-mode-hook 'tempel-setup-capf))
+
+(use-package markdown-mode)
+
+(use-package denote
+  :after markdown
+  :hook
+  ((text-mode . denote-fontify-links-mode-maybe)
+   (dired-mode . denote-dired-mode)
+   (markdown-mode . denote-dired-mode))
+  :bind
+  (("<leader> n n" . #'denote)
+   ("<leader> n f" . #'denote-open-or-create)
+   ("<leader> n N" . #'denote-type)
+   ("<leader> n d" . #'denote-sort-dired)
+   :map text-mode-map
+   ("<leader> n i" . #'denote-link)
+   ("<leader> n I" . #'denote-add-links)
+   ("<leader> n b" . #'denote-backlinks)
+   ("<leader> n r" . #'denote-rename-file-using-front-matter)
+   :map markdown-mode-map
+   ("<leader> n i" . #'denote-link)
+   ("<leader> n I" . #'denote-add-links)
+   ("<leader> n b" . #'denote-backlinks)
+   ("<leader> n r" . #'denote-rename-file-using-front-matter)
+   :map org-mode-map
+   ("<leader> n i" . #'denote-link)
+   ("<leader> n I" . #'denote-add-links)
+   ("<leader> n b" . #'denote-backlinks)
+   ("<leader> n r" . #'denote-rename-file-using-front-matter))
+  :config
+  (setq denote-directory (file-name-concat (getenv "HOME") "Documents" "Notes" "notes"))
+  (setq denote-file-type 'markdown-toml)
+  (setq denote-infer-keywords t)
+  (setq denote-sort-keywords t)
+  (setq denote-buffer-name-prefix "[Note] ")
+  (setq denote-rename-buffer-mode "%D")
+  (denote-rename-buffer-mode 1))
+
+(use-package consult-denote
+  :bind
+  (("<leader> nF" . #'consult-denote-find)
+   ("<leader> ng" . #'consult-denote-grep))
+  :config
+  (consult-denote-mode 1))
+
 (use-package go-mode)
 
 (use-package zig-mode
@@ -655,6 +708,8 @@ The DWIM behaviour of this command is as follows:
         ("<localleader> C" . #'odin-check-project)
         ("<localleader> r" . #'odin-run-project)
         ("<localleader> t" . #'odin-test-project)))
+
+(use-package elm-mode)
 
 (use-package elixir-ts-mode)
 
