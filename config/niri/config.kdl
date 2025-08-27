@@ -117,7 +117,7 @@ spawn-at-startup "swaybg" "-i" "/home/nto/Pictures/Wallpapers/Simon Stålenhag 3
 spawn-at-startup "swayidle" "-w" "timeout" "301" "niri msg action power-off-monitors" "timeout" "450" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg" "before-sleep" "swaylock -f" "-i" "/home/nto/Pictures/Wallpapers/lance-asper-5Kp5LVjINgI-unsplash.jpg"
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "emacs" "--daemon=basic" "--init-directory=~/Code/dotfiles/terminal-emacs/"
+spawn-at-startup "emacs" "--daemon=vanilla" "--init-directory=~/Code/dotfiles/emacs_basic/"
 
 prefer-no-csd
 
@@ -176,12 +176,12 @@ hotkey-overlay {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "~/.local/bin/ghostty/zig-out/bin/ghostty"; }
-    Mod+Ctrl+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
+    Mod+Ctrl+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "~/.local/bin/ghostty/zig-out/bin/ghostty"; }
+    Mod+Return repeat=false hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+Shift+Return repeat=false hotkey-overlay-title="Open a File Manager" { spawn "nautilus"; }
     Mod+D hotkey-overlay-title="Run an Application" { spawn "fuzzel"; }
-    Mod+E hotkey-overlay-title="Open Editor" repeat=false { spawn "emacs"; }
-    Mod+Shift+E hotkey-overlay-title="Open Editor (minimal)" repeat=false { spawn "emacsclient" "-c" "-s" "basic"; }
+    Mod+Shift+E hotkey-overlay-title="Open Editor" repeat=false { spawn "emacs"; }
+    Mod+E hotkey-overlay-title="Open Editor (minimal)" repeat=false { spawn "emacsclient" "-c" "-s" "vanilla"; }
 
     Mod+T repeat=false hotkey-overlay-title="Toggle theme" { spawn "~/Code/dotfiles/scripts/change_theme.sh"; }
 

@@ -1,4 +1,9 @@
-;;; early-init.el --- Description -*- lexical-binding: t; -*-
+;;; early-init.el --- Early Init -*- lexical-binding: t; -*-
+
+;;; Commentary:
+;;
+;;
+;;; Code:
 
 ;; cache directory setup
 (defvar nto--cache (file-name-concat (getenv "HOME") ".local/vanillaemacs"))
@@ -14,7 +19,8 @@
       bookmark-default-file (file-name-concat nto--cache "bookmarks")
       recentf-save-file (file-name-concat nto--cache "recentf")
       eshell-directory-name (file-name-concat nto--cache "eshell")
-      treesit-extra-load-path (file-name-concat nto--cache "tree-sitter"))
+      treesit-extra-load-path (file-name-concat nto--cache "tree-sitter")
+      transient-history-file (file-name-concat nto--cache "transient/history.el"))
 
 ;; setup other directories 
 (setq org-directory (file-name-concat (getenv "HOME") "Documents" "Org"))
@@ -42,6 +48,12 @@
              '(tool-bar-lines . 0))
 (add-to-list 'default-frame-alist
              '(vertical-scroll-bars . nil))
+
+(when (native-comp-available-p)
+  (setq native-comp-async-report-warnings-errors 'silent
+        native-compile-prune-cache t))
+
+(setq custom-safe-themes t)
 
 (setq gc-cons-threshold most-positive-fixnum
       gc-cons-percentage 0.6)
