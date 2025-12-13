@@ -15,7 +15,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:AporeticSansMono Nerd Font 14
+font pango:IosevkaTerm Nerd Font Mono 18
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -51,7 +51,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 set $term kitty
-set $file-manager thunar
+set $file-manager nautilus
 # start a terminal
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $file-manager
@@ -209,3 +209,5 @@ exec-always --no-startup-id setxkbmap -layout us,us -variant ,intl  -option ctrl
 exec --no-startup-id picom
 exec --no-startup-id dunst
 exec --no-startup-id emacs --daemon
+
+exec xrdb -merget "$HOME/.config/Xresources"
