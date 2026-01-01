@@ -61,6 +61,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+Ctrl+d exec --no-startup-id "find ~/.local/bin/ -name '*.sh' -type f | dmenu | xargs bash"
 bindsym $mod+Shift+d exec --no-startup-id rofi -show drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -210,4 +211,5 @@ exec --no-startup-id picom
 exec --no-startup-id dunst
 exec --no-startup-id emacs --daemon
 
-exec xrdb -merget "$HOME/.config/Xresources"
+exec xrdb -merge ~/.config/Xresources
+exec xinput set-prop "PIXA3854:00 093A:0274 Touchpad" "libinput Tapping Enabled" 1
