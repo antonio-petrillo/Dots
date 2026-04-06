@@ -1,5 +1,0 @@
-;; ~/Code/dotfiles/terminal-emacs/templates
-
-elixir-mode
-
-(doe "do" n> r n> "end" n)

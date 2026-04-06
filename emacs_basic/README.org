@@ -1,3 +1,0 @@
-#+title: Readme
-
-This config is meant to use as a really minimal emacs in the terminal.

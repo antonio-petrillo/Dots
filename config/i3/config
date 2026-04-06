@@ -30,7 +30,10 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
+exec_always --no-startup-id xset dpms 0 0 360
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+bindsym $mod+Ctrl+s exec --no-startup-id ~/.config/i3/scripts/caffeine.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -199,17 +202,22 @@ bar {
         status_command i3status
 }
 
-bindsym --release Print exec --no-startup-id scrot
-bindsym --release Shift+Print exec --no-startup-id scrot -s
+bindsym --release Print exec --no-startup-id scrot '%d-%m-%Y-%H%M%S.png' -e 'mv $f ~/Pictures/Screnshots/' && paplay ~/.config/i3/assets/shutter.wav
+bindsym --release Shift+Print exec --no-startup-id scrot -s '%d-%m-%Y-%H%M%S.png' -e 'mv $f ~/Pictures/Screnshots/' && paplay ~/.config/i3/assets/shutter.wav
+bindsym --release Ctrl+Print exec --no-startup-id scrot -u '%d-%m-%Y-%H%M%S.png' -e 'mv $f ~/Pictures/Screnshots/' && paplay ~/.config/i3/assets/shutter.wav
+
+bindsym --release $mod+Print exec --no-startup-id ~/.config/i3/scripts/record.sh
+
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id setxkbmap -layout us,us -variant ,intl  -option ctrl:nocaps,grp:win_space_toggle
-exec-always --no-startup-id setxkbmap -layout us,us -variant ,intl  -option ctrl:nocaps,grp:win_space_toggle
+exec --no-startup-id "setxkbmap -layout us,us -variant ,intl  -option ctrl:nocaps,grp:win_space_toggle"
+exec-always --no-startup-id "setxkbmap -layout us,us -variant ,intl  -option ctrl:nocaps,grp:win_space_toggle"
 exec --no-startup-id picom
 exec --no-startup-id dunst
 exec --no-startup-id emacs --daemon
+exec --no-startup-id "~/.dropbox-dist/dropboxd"
 
 exec xrdb -merge ~/.config/Xresources
 exec xinput set-prop "PIXA3854:00 093A:0274 Touchpad" "libinput Tapping Enabled" 1
