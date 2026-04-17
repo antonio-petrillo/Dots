@@ -1,26 +1,33 @@
 #+title: Readme
 
-* Compositor
-| package            | purpose                  | install                         |
-|--------------------+--------------------------+---------------------------------|
-| niri               | wayland compositor       | [[https://github.com/YaLTeR/niri/wiki/Getting-Started][niri wiki]]                       |
-| ghostty            | terminal emulator        | Compile from source ([[https://ghostty.org/][repo]])      |
-| foot               | backup terminal emulator | ~dnf install foot~              |
-| fuzzel             | application launcher     | ~dnf install fuzzel~              |
-| waybar             | system bar               | ~dnf install waybar~              |
-| swaync             | notification center      | ~dnf install swaync~              |
-| swaybg             | set background wallpaper | ~dnf install swaybg~              |
-| swaylock           | screen locker            | ~dnf install swaylock~            |
-| swayidle           | idle timer for locker    | ~dnf install swayidle~            |
-| xwayland-satellite | xwayland for niri        | ~dnf install xwayland-satellite~  |
-| firefox            | browser                  | already installed               |
-|--------------------+--------------------------+---------------------------------|
-| gnome              | as backup DE             | should use fedora gnome edition |
-| emacs              | emacs                    | separate repo                   |
+* Package to install
+| Package                | Description                        |
+|------------------------+------------------------------------|
+| i3                     | window manager                     |
+| kitty                  | terminal (opt)                     |
+| alacritty              | terminal                           |
+| tmux                   | terminal multiplexer               |
+| dunst                  | notification daemon                |
+| network-manager-applet | network manager app in system-tray |
+| blueman                | bluetooth app in system-tray       |
+| i3status               | for i3 bar                         |
+| i3lock                 | lockscreen                         |
+| feh                    | set the background                 |
+| xob                    | overlay for audio and brightness   |
+| pamixer                | manage audio                       |
+| brightnessctl          | manage screen brightness           |
+| scrot                  | screenshot utilility               |
+| paplay                 | play sound                         |
+| ffmpeg                 | screen recording                   |
+| dex                    | autostart                          |
+| xrdb                   | load Xresources                    |
+| picom                  | compositor                         |
+| gnome polkit           | polkit                             |
+| pavucontrol            | to manage audio                    |
 
-* Install dots
-#+begin_src bash
-stow -v -t ~/.config config --adopt
-#+end_src
-
-* Wallpapers
+* Steps
+I don't use ~stow~, I can run ~ln~ by myself.
+| TODO                                                                |
+|---------------------------------------------------------------------|
+| Create ~Screenshots~ directory under ~$HOME/Pictures~ for screenshots   |
+| Create ~Recordings~ directory under ~$HOME/Vides~ for screen recordings |

@@ -184,13 +184,12 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s '%d-%m-%Y-%H%M%S.png
 bindsym --release Ctrl+Print exec --no-startup-id scrot -u '%d-%m-%Y-%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/' && paplay ~/.config/i3/assets/shutter.wav
 
 bindsym --release $mod+Print exec --no-startup-id ~/.config/i3/scripts/record.sh
-
 bindsym XF86MonBrightnessUp exec "brightnessctl s 5%+ -m | awk -F ',' '{print int($3/65535 * 100)}' > /tmp/xobpipe"
 bindsym XF86MonBrightnessDown exec "brightnessctl s 5%- -m | awk -F ',' '{print int($3/65535 * 100)}' > /tmp/xobpipe"
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id "setxkbmap -layout us,us -variant ,intl  -option ctrl:nocaps,grp:win_space_toggle"
-exec-always --no-startup-id "setxkbmap -layout us,us -variant ,intl  -option ctrl:nocaps,grp:win_space_toggle"
+exec --no-startup-id "setxkbmap -layout us,us -variant ,intl  -option ctrl:nocaps,grp:ctrls_toggle"
+exec-always --no-startup-id "setxkbmap -layout us,us -variant ,intl  -option ctrl:nocaps,grp:ctrls_toggle"
 exec --no-startup-id picom
 exec --no-startup-id dunst
 exec --no-startup-id "~/.dropbox-dist/dropboxd"
