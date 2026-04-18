@@ -12,6 +12,12 @@ do
     ln -s $(pwd)/config/$dot $HOME/.config/$dot
 done
 
+if [ -L $HOME/.config/i3status ]; then
+    unlink $HOME/.config/i3status
+elif [ -d $HOME/.config/i3status ]; then
+    rm -rf $HOME/.config/i3status
+fi
+
 case $(hostname) in
     f13)
         echo "link i3status for laptop framework 13"
@@ -49,4 +55,6 @@ echo "Compiling get_keyboard.c"
 if [[ ! -e $HOME/.config/i3/utils/get_keyboard/get_keyboard.out || ! -x $HOME/.config/i3/utils/get_keyboard/get_keyboard.out ]]; then
     echo "Compiling ..."
     gcc $HOME/.config/i3/utils/get_keyboard/main.c -lX11 -O2 -o $HOME/.config/i3/utils/get_keyboard/get_keyboard.out
+else
+    echo "Already compiled"
 fi
