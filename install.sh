@@ -5,7 +5,7 @@ for dot in "${dots[@]}"
 do
     if [ -L $HOME/.config/$dot ]; then
         echo "LINK: $dot already exists"
-        continue
+        unlink $HOME/.config/$dot
     elif [[ -d $HOME/.config/$dot || -f $HOME/.config/$dot ]]; then
         rm -rf $HOME/.config/$dot
     fi
@@ -38,5 +38,15 @@ done
 
 pkgs=$(pacman -Q | awk -f get_package_to_install.awk)
 
-echo "Missing packages: $pkgs"
-sudo pacman -S $pkgs
+if [[ -n $pkgs ]]; then
+    echo "Missing packages: '$pkgs'"
+    sudo pacman -S $pkgs
+else
+    echo "All the packages are already installed"
+fi
+
+echo "Compiling get_keyboard.c"
+if [[ ! -e $HOME/.config/i3/utils/get_keyboard/get_keyboard.out || ! -x $HOME/.config/i3/utils/get_keyboard/get_keyboard.out ]]; then
+    echo "Compiling ..."
+    gcc $HOME/.config/i3/utils/get_keyboard/main.c -lX11 -O2 -o $HOME/.config/i3/utils/get_keyboard/get_keyboard.out
+fi
