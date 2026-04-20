@@ -13,6 +13,7 @@ xob
 picom
 scrot
 xorg-xrdb
+xorg-xinput
 polkit-gnome
 pavucontrol
 alacritty

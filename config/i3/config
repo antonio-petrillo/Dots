@@ -183,6 +183,10 @@ bar {
         status_command ~/.config/i3/scripts/bar.sh
 }
 
+gaps inner 8 px
+gaps outer 10 px
+smart_gaps on
+
 bindsym --release Print exec --no-startup-id scrot '%d-%m-%Y-%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/' && paplay ~/.config/i3/assets/shutter.wav
 bindsym --release Shift+Print exec --no-startup-id scrot -s '%d-%m-%Y-%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/' && paplay ~/.config/i3/assets/shutter.wav
 bindsym --release Ctrl+Print exec --no-startup-id scrot -u '%d-%m-%Y-%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/' && paplay ~/.config/i3/assets/shutter.wav
