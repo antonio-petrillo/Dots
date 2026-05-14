@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-dots=("Xresources" "alacritty" "fish" "i3" "kitty" "picom" "tmux" "autostart")
+dots=("Xresources" "alacritty" "fish" "i3" "kitty" "picom" "tmux" "autostart" "hypr" "quickshell" "waybar")
+
 for dot in "${dots[@]}"
 do
     if [ -L $HOME/.config/$dot ]; then
