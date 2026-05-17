@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-dots=("Xresources" "alacritty" "fish" "i3" "kitty" "picom" "tmux" "autostart" "hypr" "quickshell" "waybar")
+# dots=("Xresources" "alacritty" "fish" "i3" "kitty" "picom" "tmux" "autostart" "hypr" "quickshell" "waybar")
+dots=("alacritty" "fish" "i3" "kitty" "picom" "tmux" "autostart" "hypr" "quickshell" "waybar")
 
 for dot in "${dots[@]}"
 do

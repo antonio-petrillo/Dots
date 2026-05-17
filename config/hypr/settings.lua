@@ -7,6 +7,12 @@ local settings = {
 }
 
 hl.config({
+      xwayland = {
+         force_zero_scaling = true,
+      }
+})
+
+hl.config({
     master = {
         new_status = "master",
     },

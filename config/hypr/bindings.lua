@@ -13,7 +13,7 @@ hl.bind(mainMod .. " + SPACE", function()
            for index, layout in ipairs(settings.layouts) do
               if layout == current then
                  local next_layout = settings.layouts[index % len + 1]
-                 hl.notification.create({ text = "Change layout to: " .. next_layout, duration = 10000 })
+                 hl.notification.create({ text = "Change layout to: " .. next_layout, duration = 1000 })
                  hl.config({ general = { layout = next_layout }})
               end
            end
