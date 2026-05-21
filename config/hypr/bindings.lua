@@ -30,6 +30,7 @@ hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.pin())
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(apps.menu))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(apps.menu_2))
 hl.bind(mainMod .. " + U", hl.dsp.focus({ urgent_or_last = true }))
 
 -- Move focus with mainMod + arrow keys
