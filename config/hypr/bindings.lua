@@ -5,6 +5,7 @@ local settings = require("settings")
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(apps.terminal))
+hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd(apps.files))
 local closeWindowBind = hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 
 hl.bind(mainMod .. " + SPACE", function()

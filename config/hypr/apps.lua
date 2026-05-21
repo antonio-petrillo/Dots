@@ -1,6 +1,6 @@
 local apps = {
    terminal = "alacritty",
-   filemanager = "nautilus",
+   files = "nautilus",
    menu = "dmenu_run",
 }
 

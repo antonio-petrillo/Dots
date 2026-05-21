@@ -48,7 +48,7 @@ cyan = "0x8FBCBB"
 white = "0xECEFF4"
 
 [font]
-size = 20
+size = 10
 
 [font.normal]
 family = "monospace"
