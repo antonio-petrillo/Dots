@@ -1,10 +1,24 @@
 local settings = {
-   layouts = { "master", "monocle", "scrolling", },
+   layouts = {
+      "master",
+      "monocle",
+      -- "scrolling",
+      -- "dwindle",
+   },
 
    initial_layout = function(self)
       return self.layouts[1]
    end,
+
+   systems = { "f13", "desk" },
+   system = "f13",
 }
+
+local handle = io.popen("hostname")
+if handle ~= nil then
+    settings.system = handle:read("*a"):gsub("\n$", "")
+    handle:close()
+end
 
 hl.config({
       xwayland = {
@@ -15,9 +29,6 @@ hl.config({
 hl.config({
     master = {
         new_status = "master",
-    },
-    scrolling = {
-        fullscreen_on_one_column = true,
     },
     misc = {
         force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
