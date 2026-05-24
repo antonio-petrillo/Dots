@@ -3,7 +3,6 @@
     "position": "top",
     "height": 30,
     "spacing": 2,
-    "layer": "top",
     "exclusive": true,
     "passthrough": false,
     "margin-top": 3,
