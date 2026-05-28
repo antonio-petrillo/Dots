@@ -15,7 +15,7 @@ local function per_layout(bindings)
          end
       else
          -- noop()
-         hl.notification.create({ text = "TESTING: No binding in " .. layout, duration = 1000 })
+         -- hl.notification.create({ text = "TESTING: No binding in " .. layout, duration = 1000 })
       end
    end
 end
@@ -68,7 +68,6 @@ hl.bind(SUPER .. " + SHIFT + L", per_layout({
 }))
 
 hl.bind(SUPER .. " + CONTROL + H", per_layout({
-              master = "swapwithmaster",
 }))
 
 hl.bind(SUPER .. " + CONTROL + J", per_layout({
@@ -80,7 +79,6 @@ hl.bind(SUPER .. " + CONTROL + K", per_layout({
 }))
 
 hl.bind(SUPER .. " + CONTROL + L", per_layout({
-              master = "focusmaster",
 }))
 
 hl.bind(SUPER .. " + left", per_layout({
@@ -119,9 +117,6 @@ hl.bind(SUPER .. " + SHIFT + right", per_layout({
               master = "removemaster",
 }))
 
-hl.bind(SUPER .. " + CONTROL + left", per_layout({
-              master = "swapwithmaster",
-}))
 
 hl.bind(SUPER .. " + CONTROL + down", per_layout({
               master = "rollprev",
@@ -131,6 +126,16 @@ hl.bind(SUPER .. " + CONTROL + up", per_layout({
               master = "rollnext",
 }))
 
+hl.bind(SUPER .. " + CONTROL + left", per_layout({
+}))
+
 hl.bind(SUPER .. " + CONTROL + right", per_layout({
-              master = "focusmaster",
+}))
+
+hl.bind(SUPER .. " + SHIFT + M", per_layout({
+              master = "swapwithmaster"
+}))
+
+hl.bind(SUPER .. " + M", per_layout({
+              master = "focusmaster"
 }))
