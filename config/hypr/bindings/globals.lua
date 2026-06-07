@@ -57,3 +57,9 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+-- Screenshots
+hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" \"$(xdg-user-dir PICTURES)\"/Screenshots/$(date +%d-%m-%Y_T_%H:%H:%S).png"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy"))
+hl.bind(SUPER .. "+ Print", hl.dsp.exec_cmd("grim \"$(xdg-user-dir PICTURES)\"/Screenshots/$(date +%d-%m-%Y_T_%H:%H:%S).png"))
+hl.bind(SUPER .. " + SHIFT + Print", hl.dsp.exec_cmd("grim - | wl-copy"))
