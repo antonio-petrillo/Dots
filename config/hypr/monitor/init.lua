@@ -1,9 +1,18 @@
-local found = false
-for _, system in ipairs(global_settings.systems) do
-   found = found or system == global_settings.system
-end
+on_system({
+      f13 = function()
+         hl.monitor({
+               output   = "",
+               mode     = "preferred",
+               position = "auto",
+               scale    = 1.60,
+      }) end,
 
-
-if found then
-   require("monitor." .. global_settings.system)
-end
+      desk = function()
+         hl.monitor({
+               output   = "",
+               mode     = "preferred",
+               position = "auto",
+               scale    = 1.60,
+         })
+      end,
+})

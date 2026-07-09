@@ -17,6 +17,9 @@ hl.bind(SUPER .. " + C", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-c
 hl.bind(SUPER .. " + D", hl.dsp.exec_cmd(apps.menu))
 hl.bind(SUPER .. " + SHIFT + D", hl.dsp.exec_cmd(apps.menu_2))
 
+hl.bind(SUPER .. " + SHIFT + EQUAL", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(SUPER .. " + EQUAL", hl.dsp.workspace.toggle_special("magic"))
+
 hl.define_submap("resize", function()
                     hl.bind("H", hl.dsp.window.resize({ x = 10, y = 0, relative = true}), { repeating = true })
                     hl.bind("J", hl.dsp.window.resize({ x = 0, y = -10, relative = true}), { repeating = true })

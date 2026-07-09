@@ -1,6 +1,9 @@
 hl.on("hyprland.start", function()
-        hl.exec_cmd("waybar")
---         hl.exec_cmd("quickshell")
+         on_system({
+               f13  = function() hl.exec_cmd("waybar -c ~/.config/waybar/config-f13.jsonc") end,
+               desk = function() hl.exec_cmd("waybar -c ~/.config/waybar/config-desk.jsonc") end,
+         })
+
          hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
          hl.exec_cmd("hypridle")
          hl.exec_cmd("hyprpaper")

@@ -3,15 +3,11 @@
 * Package to install
 | Package                | Description                        |
 |------------------------+------------------------------------|
-| i3                     | window manager                     |
 | kitty                  | terminal (opt)                     |
 | alacritty              | terminal                           |
 | tmux                   | terminal multiplexer               |
-| dunst                  | notification daemon                |
 | network-manager-applet | network manager app in system-tray |
 | blueman                | bluetooth app in system-tray       |
-| i3status               | for i3 bar                         |
-| i3lock                 | lockscreen                         |
 | feh                    | set the background                 |
 | xob                    | overlay for audio and brightness   |
 | pamixer                | manage audio                       |
@@ -22,7 +18,6 @@
 | dex                    | autostart                          |
 | xrdb                   | load Xresources                    |
 | picom                  | compositor                         |
-| gnome polkit           | polkit                             |
 | pavucontrol            | to manage audio                    |
 
 * Steps
@@ -31,3 +26,6 @@ I don't use ~stow~, I can run ~ln~ by myself.
 |---------------------------------------------------------------------|
 | Create ~Screenshots~ directory under ~$HOME/Pictures~ for screenshots   |
 | Create ~Recordings~ directory under ~$HOME/Vides~ for screen recordings |
+
+* Notes
++ The theme for Hyprland and Waybar are taken from [[https://github.com/HANCORE-linux][HANCORE-linux]]
