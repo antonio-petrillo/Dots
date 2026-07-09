@@ -22,7 +22,9 @@
         "custom/separator_slash",
         "memory",
         "custom/separator_slash",
-        "cpu"
+        "cpu",
+        "custom/separator_right",
+        "custom/power",
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -182,5 +184,10 @@
     "tray": {
         "icon-size": 14,
         "spacing": 0
+    },
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/powermenu.sh",
     },
 }
