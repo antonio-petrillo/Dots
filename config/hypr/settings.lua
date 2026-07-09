@@ -14,15 +14,6 @@ local settings = {
    system = "f13",
 }
 
-function on_system(callbacks)
-   callback = callbacks[global_settings.system]
-   if callback ~= nil then
-      if type(callback) == "function" then
-         callback()
-      end
-   end
-end
-
 local handle = io.popen("hostname")
 if handle ~= nil then
     settings.system = handle:read("*a"):gsub("\n$", "")
